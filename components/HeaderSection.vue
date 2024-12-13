@@ -26,7 +26,7 @@ onMounted(() => {
       <div class="container-box">
         <div class="logo">
           <a href="">
-            <img src="../public/images/logo.jpg" alt="logo">
+            <img src="../public/images/logo.png" alt="logo">
           </a>
           <button @click="toggleLinksVisibility" class="bar-btn" v-if="isMobile">
             <UIcon
@@ -74,10 +74,11 @@ onMounted(() => {
 
 <style scoped>
 .header-section {
-  background-color: var(--main-color);
-  color: var(--main-font-color);
+  background-color: #EEEEEE;
+  color: var(--main-color);
   margin: 0;
   padding: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
 .container-box > button {
@@ -94,11 +95,10 @@ onMounted(() => {
 }
 
 .logo img {
-  width: 60px;
+  width: 70px;
   max-width: 70px;
   max-height: 70px;
   height: 60px;
-  border-radius: 50%;
 }
 
 .menu {
@@ -114,14 +114,14 @@ onMounted(() => {
 }
 
 .menu-links li a {
-  color: var(--main-font-color);
+  color: var(--main-color);
   font-size: 1.2rem;
   margin: 0 .5rem;
   text-decoration: none;
 }
 
 .menu-links li a:hover {
-  color: var(--font-hovor-color);
+  color: var(--main-hovor-color);
   transition: .3s ease-in-out;
 }
 
