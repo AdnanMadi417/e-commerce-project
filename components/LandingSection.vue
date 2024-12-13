@@ -13,7 +13,11 @@ const items = [
     icon: "mdi-account-group",
     description: "More than 5,000 happy clients served.",
   },
-];</script>
+];
+
+const currentYear = new Date().getFullYear();
+
+</script>
 
 <template>
   <section class="landing-section">
@@ -33,6 +37,13 @@ const items = [
       </div>
 
     </div>
+
+    <div class="divider">
+      <hr />
+      <span class="divider-text">{{ currentYear }}</span>
+      <hr />
+    </div>
+
   </section>
   <section class="analysis-section">
     <div class="main-container">
@@ -55,6 +66,7 @@ const items = [
 .landing-section {
   padding: 40px 0;
   background: linear-gradient(135deg, #3B1C32, #6A1E55);
+  min-height: 80vh;
 }
 
 .container {
@@ -112,6 +124,31 @@ const items = [
   .description {
     font-size: 0.9rem;
   }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 0;
+}
+
+.divider-text {
+  font-size: 1.2rem;
+  color: var(--font-hovor-color);
+  padding: 0 10px;
+  z-index: 1;
 }
 
 .analysis-section {
