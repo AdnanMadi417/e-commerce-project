@@ -5,6 +5,7 @@ type Product = {
   id: number;
   image: string;
   innerImages: string[];
+  detailsImages: string[];
   location: string;
   budget: string;
   description: string;
@@ -44,6 +45,15 @@ const items: Product[] = [
         costometerPhone: "+601112223333",
       },
     ],
+    detailsImages: [
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+    ],
   },
   {
     id: 2,
@@ -66,6 +76,15 @@ const items: Product[] = [
         costometerPhone: "+10123456789",
       },
     ],
+    detailsImages: [
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+    ],
   },
   {
     id: 3,
@@ -86,6 +105,15 @@ const items: Product[] = [
         costometerContactLink: "https://emma-agent.com",
         costometerPhone: "+61234567890",
       },
+    ],
+    detailsImages: [
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
+      "/images/home_1.webp",
     ],
   },
 ];
@@ -183,6 +211,13 @@ const currentYear = new Date().getFullYear();
         <button class="appointment-btn">Make Appointment</button>
       </div>
     </div>
+
+    <div class="images-container">
+      <div class="image-card" v-for="(image, index) in product.detailsImages" :key="index">
+        <img :src="image" alt="Property Image"/>
+      </div>
+    </div>
+
   </section>
 
   <section v-else>
@@ -380,7 +415,7 @@ h2 {
     display: block;
     align-items: center;
     padding: 0;
-    font-size:1.2rem;
+    font-size: 1.2rem;
   }
 
   .agent-image {
@@ -393,6 +428,55 @@ h2 {
     display: block;
     align-items: center;
     text-align: center;
+  }
+}
+
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 16px;
+  background-color: #EEEEEE;
+}
+
+.image-card {
+  flex: 1 1 calc(20% - 16px);
+  max-width: calc(20% - 16px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width:1200px) {
+
+  .product-details{
+    padding: 0;
+    margin: 0;
+  }
+
+  .images-container {
+    flex-direction: column;
+  }
+
+  .image-card {
+    flex: 1 1 calc(100% - 16px);
+    max-width: calc(100% - 16px);
   }
 }
 
