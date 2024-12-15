@@ -123,33 +123,33 @@ const currentYear = new Date().getFullYear();
 <style scoped>
 
 .contact-section {
-  background-color: #f9f9f9; /* Light background for contrast */
   padding: 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.contact-container {
+.contact-section .contact-container {
   max-width: 800px;
   width: 100%;
   background-color: var(--font-hovor-color);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: -200px;
+  z-index: 1001;
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: 600;
   color: var(--main-color);
-  margin-bottom: 20px;
   text-align: center;
 }
 
 form {
   display: block;
-  gap: 15px;
 }
 
 .form-control input {
@@ -161,6 +161,17 @@ form {
   font-size: 1rem;
   color: var(--font-hovor-color);
   transition: border-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .form-control input {
+    width: calc(100% - 30px);
+  }
 }
 
 textarea {
@@ -180,7 +191,7 @@ input:focus, textarea:focus {
 
 textarea {
   resize: vertical;
-  min-height: 80px;
+  min-height: 60px;
 }
 
 button {
@@ -224,7 +235,7 @@ button:active {
 
 
 .footer-section {
-  padding: 100px 0 0 0;
+  padding: 150px 0 0 0;
   background-color: var(--main-color);
 }
 
