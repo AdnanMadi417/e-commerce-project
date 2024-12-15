@@ -169,6 +169,7 @@ form {
     flex-direction: column;
     margin: 0 auto;
   }
+
   .form-control input {
     width: calc(100% - 30px);
   }
@@ -290,6 +291,13 @@ button:active {
 .menu-links li {
   margin-bottom: .9rem;
   border-bottom: 2px solid var(--main-font-color);
+}
+
+@media (max-width: 1200px) {
+  .menu-links li {
+    border: none;
+    margin-left: 10px;
+  }
 }
 
 .menu-links li a {
