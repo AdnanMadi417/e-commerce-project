@@ -34,7 +34,6 @@ const details = [
         </div>
       </div>
 
-      <!-- Info Section -->
       <div class="info-container">
         <div class="description-box">
           <h2 class="title">We Provide the Best Property for You</h2>
@@ -110,6 +109,37 @@ const details = [
   transition: background-color 0.3s ease-in-out;
 }
 
+@media (max-width: 767px) {
+  .container {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  .photo-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .photo-box {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width:1200px){
+  .container {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .photo-box{
+    margin: 10px auto;
+  }
+
+}
+
 .info-container {
   flex: 2;
   display: flex;
@@ -131,6 +161,20 @@ const details = [
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--main-color);
+  }
+
+  .description {
+    text-align: justify;
+    margin: 1rem auto ;
+  }
 }
 
 .statistics-box {
